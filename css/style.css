@@ -693,6 +693,66 @@ footer p {
   transform: translateY(0);
 }
 
+/* ----- TOUR PACKAGE CARDS WITH SHOW MORE/LESS ----- */
+.tour-card .card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.tour-preview {
+  margin-bottom: 1rem;
+}
+
+.tour-preview p {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.tour-full-description {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  border-left: 4px solid #2ecc71;
+}
+
+.tour-full-description ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.tour-full-description li {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.toggle-description {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.9rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.toggle-description:hover {
+  background: #2ecc71;
+  color: white;
+  border-color: #2ecc71;
+}
+
+/* Small button style */
+.btn-sm {
+  padding: 0.3rem 1rem;
+  font-size: 0.85rem;
+}
+
+/* Remove old card-details if not needed */
+.tour-card .card-details {
+  display: none; /* Hide the old price/capacity badges */
+}
+
 /* ----- RESPONSIVE (mobile-first) ----- */
 @media (max-width: 768px) {
   .nav-menu {
