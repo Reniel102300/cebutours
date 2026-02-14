@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Cebu Van Rental & Tours</title>
+  <!-- Font Awesome 6 (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- STICKY NAVIGATION (no Bootstrap) -->
+  <header class="sticky-nav">
+    <nav class="navbar">
+      <div class="container nav-container">       
+          <a href="#home" class="logo">
+  <img src="images/logo.jpg" alt="Cebu Tours By Danny" class="logo-img">
+  <span class="logo-text">Cebu Tours By Danny</span>
+</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#tour package" class="nav-link">Tour Package</a></li>
+          <li><a href="#spots" class="nav-link">Tourist Spots</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO CAROUSEL (image slider) -->
+    <section id="home" class="hero">
+      <div class="carousel-container">
+        <div class="carousel-slides">
+          <div class="slide active">
+            <div class="slide-image" style="background-image: url('images/magellan.jpg');"></div>
+            <div class="slide-content">
+              <h1>Cebu Tours By Danny</h1>
+              <p class="tagline">Comfortable • Affordable • Safe Travel</p>
+              <div class="hero-buttons">
+                <a href="#" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Now</a>
+                <a href="https://m.me/cebuvanrental" target="_blank" class="btn btn-outline"><i class="fab fa-facebook-messenger"></i> Chat on Messenger</a>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide-image" style="background-image: url('images/simala-shrine.jpg');"></div>
+            <div class="slide-content">
+              <h1>Cebu Tours By Danny</h1>
+              <p class="tagline">Comfortable • Affordable • Safe Travel</p>
+              <div class="hero-buttons">
+                <a href="#" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Now</a>
+                <a href="https://m.me/cebuvanrental" target="_blank" class="btn btn-outline"><i class="fab fa-facebook-messenger"></i> Chat on Messenger</a>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="slide-image" style="background-image: url('images/whale\ shark.jpg');"></div>
+            <div class="slide-content">
+              <h1>Cebu Tours By Danny</h1>
+              <p class="tagline">Comfortable • Affordable • Safe Travel</p>
+              <div class="hero-buttons">
+                <a href="#" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Now</a>
+                <a href="https://m.me/cebuvanrental" target="_blank" class="btn btn-outline"><i class="fab fa-facebook-messenger"></i> Chat on Messenger</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Carousel controls -->
+        <button class="carousel-control prev" aria-label="Previous slide">&#10094;</button>
+        <button class="carousel-control next" aria-label="Next slide">&#10095;</button>
+        <div class="carousel-indicators">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOUR PACKAGE -->
+    <section id="tour package" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2><span>Tour</span> Package</h2>
+          <p>Choose your perfect ride for Cebu adventure</p>
+        </div>
+        <div class="card-grid">
+          <!-- Van 1 -->
+          <div class="card">
+            <img src="images/cityuphillTp.jpg" alt="City and Uphill Tour">
+            <div class="card-content">
+              <h3>City and Uphill Tour</h3>
+              <p>Spacious van for groups, fully airconditioned.</p>
+              <div class="card-details">
+                <span class="badge capacity"><i class="fas fa-users"></i> 12 pax</span>
+                <span class="badge price"><i class="fas fa-tag"></i> ₱3,500/day</span>
+              </div>
+            </div>
+          </div>
+          <!-- Van 2 -->
+          <div class="card">
+            <img src="images/moalboaltp.jpg" alt="Moalboal Tour">
+            <div class="card-content">
+              <h3>Moalboal Tour</h3>
+              <p>Premium comfort, reclining seats, perfect for long tours.</p>
+              <div class="card-details">
+                <span class="badge capacity"><i class="fas fa-users"></i> 14 pax</span>
+                <span class="badge price"><i class="fas fa-tag"></i> ₱3,800/day</span>
+              </div>
+            </div>
+          </div>
+          <!-- Van 3 -->
+          <div class="card">
+            <img src="images/oslobTp.jpg" alt="Oslob Simala Tour">
+            <div class="card-content">
+              <h3>Oslob Simala Tour</h3>
+              <p>Modern van with wifi, GPS, and entertainment system.</p>
+              <div class="card-details">
+                <span class="badge capacity"><i class="fas fa-users"></i> 10 pax</span>
+                <span class="badge price"><i class="fas fa-tag"></i> ₱3,200/day</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </section>
+
+    <!-- TOURIST SPOTS SECTION -->
+    <section id="spots" class="section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <h2><span>Tourist</span> Spots</h2>
+          <p>Discover Cebu's gems – beaches, mountains, heritage</p>
+        </div>
+        <div class="card-grid">
+          <!-- Spot 1 -->
+          <div class="card">
+            <img src="images/kawasan.jpg" alt="Kawasan Falls">
+            <div class="card-content">
+              <h3>Kawasan Falls</h3>
+              <p>Multi-tiered waterfalls with turquoise water in Badian. Perfect for canyoneering.</p>
+            </div>
+          </div>
+          <!-- Spot 2 -->
+          <div class="card">
+            <img src="images/osmena.jpg" alt="Osmeña Peak">
+            <div class="card-content">
+              <h3>Osmeña Peak</h3>
+              <p>Highest point in Cebu, stunning mountain views & chocolate hills-like formations.</p>
+            </div>
+          </div>
+          <!-- Spot 3 -->
+          <div class="card">
+            <img src="images/magellan.jpg" alt="Magellan's Cross">
+            <div class="card-content">
+              <h3>Magellan's Cross</h3>
+              <p>Historic landmark in Cebu City, symbol of Philippine Christianity.</p>
+            </div>
+          </div>
+          <!-- Spot 4 -->
+          <div class="card">
+            <img src="images/moalboal.jpg" alt="Moalboal">
+            <div class="card-content">
+              <h3>Moalboal</h3>
+              <p>Famous for sardine run, sea turtles, and white sand beaches.</p>
+            </div>
+          </div>
+          <!-- Spot 5 -->
+          <div class="card">
+            <img src="images/sirao.jpg" alt="Sirao Garden">
+            <div class="card-content">
+              <h3>Sirao Garden</h3>
+              <p>Little Amsterdam of Cebu – colorful flowers & scenic hills.</p>
+            </div>
+          </div>
+          <!-- Spot 6 -->
+          <div class="card">
+            <img src="images/temple.jpg" alt="Temple of Leah">
+            <div class="card-content">
+              <h3>Temple of Leah</h3>
+              <p>Roman-inspired architecture, a symbol of undying love overlooking Cebu.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+   <section id="gallery" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2><span>Guest Review</span></h2>
+      
+    </div>
+
+    <div class="gallery-grid" id="test-gallery">
+      <div class="gallery-item">
+        <img src="images/1.jpg" alt="1" class="gallery-thumb" onclick="openModal(this.src, 0)">
+      </div>
+      <div class="gallery-item">
+        <img src="images/2.jpg" alt="2" class="gallery-thumb" onclick="openModal(this.src, 1)">
+      </div>
+      <div class="gallery-item">
+        <img src="images/3.jpg" alt="3" class="gallery-thumb" onclick="openModal(this.src, 1)">
+      </div>
+      <div class="gallery-item">
+        <img src="images/4.jpg" alt="4" class="gallery-thumb" onclick="openModal(this.src, 1)">
+      </div>
+      <!-- Add more images similarly -->
+    </div>
+
+    <!-- Simple Modal -->
+    <div id="simple-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999;">
+      <span onclick="closeModal()" style="position:absolute; top:20px; right:35px; color:white; font-size:40px; cursor:pointer;">&times;</span>
+      <img id="modal-img" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); max-width:90%; max-height:90%;">
+    </div>
+  </div>
+</section>
+
+<script>
+function openModal(src, index) {
+  document.getElementById('simple-modal').style.display = 'block';
+  document.getElementById('modal-img').src = src;
+}
+function closeModal() {
+  document.getElementById('simple-modal').style.display = 'none';
+}
+</script>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <h2><span>Contact</span> Us</h2>
+          <p>We're ready for your next Cebu adventure</p>
+        </div>
+        <div class="contact-grid">
+  <!-- LEFT COLUMN: contact info + buttons -->
+  <div class="contact-info">
+    <h3><i class="fas fa-address-card"></i> Get in touch</h3>
+    <ul>
+      <li><i class="fas fa-map-marker-alt"></i> Unit 8, IT Park, Apas, Cebu City</li>
+      <li><i class="fas fa-phone-alt"></i> +63 32 123 4567</li>
+      <li><i class="fas fa-envelope"></i> book@cebuvanrental.ph</li>
+    </ul>
+    <hr>
+    <a href="https://facebook.com/cebuvanrental" target="_blank" class="btn btn-primary"><i class="fab fa-facebook-f"></i> Facebook Page</a>
+    <a href="https://m.me/cebuvanrental" target="_blank" class="btn btn-primary"><i class="fab fa-facebook-messenger"></i> Messenger Chat</a>
+  </div>
+
+  <!-- RIGHT COLUMN: logo + business name + tagline (NO FORM) -->
+  <div class="contact-logo-block">
+    <img src="images/logo.jpg" alt="Cebu Tours By_Danny" class="contact-logo-img">
+    <h2 class="contact-business-name">Cebu Tours By_Danny</h2>
+    <p class="contact-tagline">Comfortable • Affordable • Safe Travel</p>
+  </div>
+</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Cebu Tours By Danny. Travel safe, travel happy.<br>Reniel Gwapo</p>
+    </div>
+  </footer>
+
+  <!-- Custom JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
