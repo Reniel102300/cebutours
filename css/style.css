@@ -619,7 +619,7 @@ footer p {
 
 #tour-package .card img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
 }
 
@@ -660,7 +660,7 @@ footer p {
 @media (max-width: 400px) {
 
   #tour-package .card img {
-    height: 150px;
+    height: 100px;
   }
 
   #tour-package .card-content h3 {
@@ -678,7 +678,7 @@ footer p {
 }
 
 /* ----- RESPONSIVE (global) ----- */
-@media (max-width: 400px) {
+@media (max-width: 760px) {
   .nav-menu {
     position: fixed;
     top: 70px;
@@ -763,7 +763,7 @@ footer p {
 /* Extra small phones */
 @media (max-width: 380px) {
   #tour-package .card img {
-    height: 130px !important;
+    height: 100px !important;
   }
   
   #tour-package .card-content h3 {
@@ -814,6 +814,7 @@ footer p {
     font-size: 1rem;
   }
 }
+
 
 
 
