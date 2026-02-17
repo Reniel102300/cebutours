@@ -1,5 +1,4 @@
 /* ----- Cebu Van Rental & Tours ----- */
-/* Mobile-first, travel colors: blue (#3498db), green (#2ecc71), white */
 * {
   margin: 0;
   padding: 0;
@@ -50,7 +49,7 @@ body {
   width: 45px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid rgb(25, 141, 249);
+  border: 2px solid #3498db;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
@@ -157,22 +156,23 @@ body {
 }
 
 /* ----- CARD GRID ----- */
-/* ----- CARD GRID (UPDATED RESPONSIVE) ----- */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  width: 100%;
 }
 
-
 .card {
-  
   background: white;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.03);
   transition: transform 0.3s, box-shadow 0.3s;
   border: 1px solid rgba(0,0,0,0.03);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -182,7 +182,7 @@ body {
 
 .card img {
   width: 100%;
-  height: 250px;
+  height: 220px;
   object-fit: cover;
   transition: transform 0.5s;
 }
@@ -193,6 +193,9 @@ body {
 
 .card-content {
   padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-content h3 {
@@ -207,36 +210,10 @@ body {
   font-size: 0.95rem;
 }
 
-.card-details {
-  display: flex;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
-
-.badge {
-  padding: 0.4rem 1rem;
-  border-radius: 30px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.capacity {
-  background: #e8f4fd;
-  color: #3498db;
-}
-
-.price {
-  background: #e6f9ed;
-  color: #2ecc71;
-}
-
 /* ----- HERO CAROUSEL ----- */
 .hero {
   height: 90vh;
-  min-height: 500px;
+  min-height: 600px;
   position: relative;
   overflow: hidden;
 }
@@ -317,31 +294,41 @@ body {
   font-weight: 500;
   transition: all 0.3s;
   border: 2px solid transparent;
+  cursor: pointer;
 }
 
 .btn-primary {
-  background: #0109f6;
+  background: #3498db;
   color: white;
 }
 
 .btn-primary:hover {
-  background: white;
-  color: #070101;
-  border: 2px solid #0109f6;
+  background: #2ecc71;
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(46,204,113,0.3);
 }
 
 .btn-outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-outline:hover {
   background: white;
+  color: #2c3e50;
+  transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+  background: transparent;
   border: 2px solid #3498db;
   color: #3498db;
 }
 
-.btn-outline:hover {
+.btn-outline-primary:hover {
   background: #3498db;
   color: white;
-  transform: translateY(-2px);
 }
 
 .carousel-control {
@@ -395,7 +382,49 @@ body {
   transform: scale(1.2);
 }
 
-/* ----- GALLERY SECTION (FIXED) ----- */
+/* Fix for tour preview and full description */
+.tour-preview {
+  display: block;
+}
+
+.tour-full-description {
+  display: none;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  border-left: 4px solid #2ecc71;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.tour-full-description ul {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+}
+
+.tour-full-description li {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.toggle-description {
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+  align-self: center;
+  width: fit-content;
+}
+
+.view-more-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* ----- GALLERY SECTION ----- */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -430,7 +459,7 @@ body {
   transform: scale(1.05);
 }
 
-/* ----- GALLERY MODAL ----- */
+/* ----- LIGHTBOX MODAL ----- */
 .gallery-modal {
   display: none;
   position: fixed;
@@ -439,7 +468,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0,0,0,0.95);
 }
 
 .modal-content {
@@ -455,6 +484,7 @@ body {
   max-width: 100%;
   max-height: 90vh;
   border-radius: 8px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.3);
 }
 
 .modal-close {
@@ -466,6 +496,7 @@ body {
   font-weight: bold;
   cursor: pointer;
   z-index: 10000;
+  transition: color 0.3s;
 }
 
 .modal-close:hover {
@@ -481,9 +512,14 @@ body {
   color: white;
   border: none;
   font-size: 36px;
-  padding: 10px 15px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 50%;
+  transition: all 0.3s;
   z-index: 10000;
 }
 
@@ -497,7 +533,7 @@ body {
 
 .modal-prev:hover,
 .modal-next:hover {
-  background: rgba(46,204,113,0.5);
+  background: rgba(46,204,113,0.8);
 }
 
 /* ----- CONTACT SECTION ----- */
@@ -513,7 +549,6 @@ body {
   background: #e5e4e2;
   padding: 2rem;
   border-radius: 24px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.02);
   border: 1px solid white;
   display: flex;
   flex-direction: column;
@@ -524,7 +559,6 @@ body {
   background: #e5e4e2;
   padding: 2rem;
   border-radius: 24px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.02);
   border: 1px solid white;
   display: flex;
   flex-direction: column;
@@ -542,16 +576,14 @@ body {
   border-radius: 40px;
 }
 
-.contact-info .btn:first-of-type {
-  margin-bottom: 0.5rem;
-}
-
-.contact-info {
-  text-align: center;
-}
-
 .contact-info ul {
   text-align: left;
+  margin: 1rem 0;
+}
+
+.contact-info li {
+  margin-bottom: 0.5rem;
+  list-style: none;
 }
 
 .contact-logo-img {
@@ -581,7 +613,6 @@ body {
   color: #666;
   font-size: 1rem;
   letter-spacing: 1px;
-  word-spacing: 4px;
 }
 
 /* ----- FOOTER ----- */
@@ -589,14 +620,10 @@ footer {
   background: #1e2b36;
   color: white;
   text-align: center;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
 }
 
-footer p {
-  margin-bottom: 0;
-}
-
-/* ----- ANIMATED SECTION REVEAL ----- */
+/* ----- ANIMATIONS ----- */
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
@@ -608,77 +635,14 @@ footer p {
   transform: translateY(0);
 }
 
-/* ===== TOUR PACKAGE SECTION - CLEAN RESPONSIVE FIX ===== */
-
-#tour-package .card {
-  width: 100%;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-#tour-package .card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-#tour-package .card-content {
-  padding: 1.2rem;
-  display: flex;
-  flex-direction: column;
-}
-
-#tour-package .tour-full-description {
-  margin: 1rem 0;
-  padding: 1rem;
-  background: #f9f9f9;
-  border-radius: 12px;
-  border-left: 4px solid #2ecc71;
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-#tour-package .toggle-description {
-  margin-top: auto;
-  padding: 0.6rem 1.2rem;
-  border-radius: 30px;
-  border: 2px solid #3498db;
-  background: transparent;
-  color: #3498db;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#tour-package .toggle-description:hover {
-  background: #2ecc71;
-  color: white;
-  border-color: #2ecc71;
-}
-
-/* Mobile Improvements */
-@media (max-width: 400px) {
-
-  #tour-package .card img {
-    height: 100px;
-  }
-
-  #tour-package .card-content h3 {
-    font-size: 1.1rem;
-  }
-
-  #tour-package .tour-full-description {
-    font-size: 0.85rem;
-  }
-
-  #tour-package .toggle-description {
-    width: 100%;
-    text-align: center;
+/* ----- RESPONSIVE ----- */
+@media (max-width: 992px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* ----- RESPONSIVE (global) ----- */
-@media (max-width: 760px) {
+@media (max-width: 768px) {
   .nav-menu {
     position: fixed;
     top: 70px;
@@ -727,17 +691,47 @@ footer p {
     font-size: 1.8rem;
   }
 
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  .tour-full-description {
+    max-height: 250px;
+    font-size: 0.9rem;
+  }
+
+  .tour-full-description li {
+    font-size: 0.85rem;
+  }
+
+  .toggle-description {
+    width: 100%;
+    text-align: center;
+  }
+
   .contact-grid {
     flex-direction: column;
   }
-  
+
   .contact-logo-img {
     width: 120px;
     height: 120px;
   }
-  
+
   .contact-business-name {
     font-size: 1.4rem;
+  }
+
+  .modal-prev,
+  .modal-next {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
   }
 }
 
@@ -746,75 +740,30 @@ footer p {
     height: 35px;
     width: 35px;
   }
-  .logo-text {
-    font-size: 0.9rem;
-  }
   
+  .logo-text {
+    font-size: 1rem;
+  }
+
   .hero-buttons .btn {
     width: 100%;
     text-align: center;
   }
-  
+
+  .card img {
+    height: 180px;
+  }
+
   .section-header h2 {
     font-size: 1.5rem;
   }
-}
 
-/* Extra small phones */
-@media (max-width: 380px) {
-  #tour-package .card img {
-    height: 100px !important;
+  .tour-full-description {
+    max-height: 220px;
+    font-size: 0.85rem;
   }
-  
-  #tour-package .card-content h3 {
-    font-size: 1.1rem !important;
-  }
-  
-  #tour-package .tour-preview p {
-    font-size: 0.85rem !important;
-  }
-  
-  #tour-package .tour-full-description {
-    max-height: 280px !important;
-    font-size: 0.8rem !important;
-  }
-  
-  #tour-package .tour-full-description li {
-    font-size: 0.75rem !important;
+
+  .tour-full-description li {
+    font-size: 0.8rem;
   }
 }
-/* ===== HERO RESPONSIVE FIX ===== */
-
-@media (max-width: 768px) {
-  .hero {
-    height: 70vh;
-    
-  }
-
-  .slide-content h1 {
-    font-size: 2rem;
-  }
-
-  .tagline {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    height: 60vh;
-    
-  }
-
-  .slide-content h1 {
-    font-size: 1.6rem;
-  }
-
-  .tagline {
-    font-size: 1rem;
-  }
-}
-
-
-
-
