@@ -241,41 +241,71 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // ----- TOUR PACKAGE SHOW MORE / SHOW LESS -----
+   // ----- TOUR PACKAGE SHOW MORE / SHOW LESS -----
+    // ----- TOUR PACKAGE SHOW MORE / SHOW LESS (FIXED) -----
   const toggleButtons = document.querySelectorAll('.toggle-description');
 
   toggleButtons.forEach(button => {
     button.addEventListener('click', function() {
-      // Find the parent card and the full description
       const card = this.closest('.tour-card');
+      const fullDesc = card.querySelector('.tour-full-description');
+      const preview = card.querySelector('.tour-preview');
       
-      if (card) {
-        const fullDesc = card.querySelector('.tour-full-description');
-        const preview = card.querySelector('.tour-preview');
-        
-        if (fullDesc && preview) {
-          // Toggle visibility
-          if (fullDesc.style.display === 'none' || !fullDesc.style.display) {
-            fullDesc.style.display = 'block';
-            preview.style.display = 'none';
-            this.textContent = 'Show Less';
-          } else {
-            fullDesc.style.display = 'none';
-            preview.style.display = 'block';
-            this.textContent = 'Show More';
-          }
-        }
+      if (fullDesc.style.display === 'none' || fullDesc.style.display === '') {
+        fullDesc.style.display = 'block';
+        preview.style.display = 'none';
+        this.textContent = 'Show Less';
+      } else {
+        fullDesc.style.display = 'none';
+        preview.style.display = 'block';
+        this.textContent = 'Show More';
       }
     });
   });
 
-  // Initialize tour descriptions (set initial state)
+  // Initialize tour descriptions
   document.querySelectorAll('.tour-full-description').forEach(desc => {
     desc.style.display = 'none';
   });
-  
+
   document.querySelectorAll('.tour-preview').forEach(preview => {
     preview.style.display = 'block';
   });
+
+  // ----- VIEW MORE TOURS BUTTON -----
+  const viewMoreBtn = document.getElementById('viewMoreTours');
+  const hiddenTours = document.getElementById('hiddenTours');
+  const viewMoreContainer = document.querySelector('.view-more-container');
+
+  if (viewMoreBtn && hiddenTours && viewMoreContainer) {
+    const originalPosition = {
+      parent: viewMoreContainer.parentNode,
+      nextSibling: viewMoreContainer.nextSibling
+    };
+    
+    const hiddenToursParent = hiddenTours.parentNode;
+    
+    viewMoreBtn.addEventListener('click', function() {
+      if (hiddenTours.style.display === 'none' || hiddenTours.style.display === '') {
+        hiddenTours.style.display = 'block';
+        viewMoreBtn.textContent = 'Show Less Tours';
+        
+        if (hiddenTours.nextSibling) {
+          hiddenToursParent.insertBefore(viewMoreContainer, hiddenTours.nextSibling);
+        } else {
+          hiddenToursParent.appendChild(viewMoreContainer);
+        }
+      } else {
+        hiddenTours.style.display = 'none';
+        viewMoreBtn.textContent = 'View More Tours';
+        
+        if (originalPosition.nextSibling) {
+          originalPosition.parent.insertBefore(viewMoreContainer, originalPosition.nextSibling);
+        } else {
+          originalPosition.parent.appendChild(viewMoreContainer);
+        }
+      }
+    });
+  }
 
 }); // End DOMContentLoaded
